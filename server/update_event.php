@@ -19,7 +19,7 @@ if (isset($_SESSION['username'])) {
     // $end = "'.$_POST['end_date']'";
     // $start_hour = "'.$_POST['start_hour'].'";
     // $end_hour = "'.$_POST['end_hour'].'";
-    
+
     if(validateDate($_POST['start_date'], 'Y-m-d'))
 			$datos['ini'] = $_POST['start_date'];
 		if(validateDate($_POST['start_hour'], 'H:i:s'))
@@ -30,9 +30,9 @@ if (isset($_SESSION['username'])) {
 			$datos['fin_hora'] = $_POST['end_hour'];
 
     $actualizar_registro = $con->actualizarRegistro('eventos',$datos, 'id='.$_POST['id']);
-    
+
     if ($actualizar_registro) {
-      
+
       $response['msg'] = "OK";
     } else {
       $response['msg'] = "No se pudo actualizar el evento.";
