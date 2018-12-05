@@ -19,7 +19,7 @@ class EventsManager {
           success: (data) =>{
             if (data.msg=="OK") {
               this.poblarCalendario(data.eventos)
-              console.log(data.eventos);
+
             }else {
               alert(data.msg)
               window.location.href = 'index.html';
@@ -192,6 +192,7 @@ class EventsManager {
           },
           error: function(){
             alert("error en la comunicación con el servidor");
+
           }
         })
     }
